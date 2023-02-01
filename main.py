@@ -1,3 +1,7 @@
+import smtplib
+from string import Template
+
+
 def get_users(file_name):
     names = []
     emails = []
