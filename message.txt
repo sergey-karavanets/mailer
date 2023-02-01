@@ -1,0 +1,3 @@
+Hi, ${USER_NAME}!
+
+This email was sent by Python :)
