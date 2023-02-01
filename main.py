@@ -24,4 +24,24 @@ def main():
 
     smtp_server = smtplib.SMTP(host='host_address', port=port_here)
     smtp_server.starttls()
-    smtp_server.login(my_mail, my_password)
+    smtp_server.login(FROM_EMAIL, MY_PASSWORD)
+
+    for name, email in zip(names, emails):
+        multipart_msg = MIMEMultipart()
+
+        message = message_template.substitute(USER_NAME=name.title())
+
+        multipart_msg['From'] = FROM_EMAIL
+        multipart_msg['To'] = email
+        multipart_msg['Subject'] = 'Subject'
+
+        multipart_msg.attach(MIMEText(message, 'plain'))
+
+        smtp_server.sendmail(multipart_msg['From'], multipart_msg['To'], multipart_msg.as_string())
+        del multipart_msg
+
+    smtp_server.quit()
+
+
+if __name__ == '__main__':
+    main()
