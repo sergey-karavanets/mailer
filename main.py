@@ -7,3 +7,7 @@ def get_users(file_name):
             emails.append(user_info.split()[1])
     return names, emails
 
+def parse_template(file_name):
+    with open(file_name, 'r') as msg_template:
+        msg_template_content = msg_template.read()
+    return Template(msg_template_content)
