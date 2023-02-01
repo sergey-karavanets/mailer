@@ -1,3 +1,5 @@
-Hi, ${USER_NAME}!
+Hi, ${USER_FIRST_NAME} ${USER_LAST_NAME}!
+
+Your birthday is ${USER_BDAY}.
 
 This email was sent by Python :)
