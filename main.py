@@ -1,16 +1,9 @@
-# This is a sample Python script.
+def get_users(file_name):
+    names = []
+    emails = []
+    with open(file_name, 'r') as user_file:
+        for user_info in user_file:
+            names.append(user_info.split()[0])
+            emails.append(user_info.split()[1])
+    return names, emails
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
