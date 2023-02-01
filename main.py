@@ -9,13 +9,17 @@ MY_PASSWORD = 'pejgekmfantjrsle'
 
 
 def get_users(file_name):
-    names = []
+    first_names = []
+    last_names = []
     emails = []
+    birthday = []
     with open(file_name, 'r') as user_file:
         for user_info in user_file:
-            names.append(user_info.split()[0])
-            emails.append(user_info.split()[1])
-    return names, emails
+            first_names.append(user_info.split()[0])
+            last_names.append(user_info.split()[1])
+            emails.append(user_info.split()[2])
+            birthday.append(user_info.split()[3])
+    return first_names, last_names, emails, birthday
 
 
 def parse_template(file_name):
@@ -25,17 +29,19 @@ def parse_template(file_name):
 
 
 def main():
-    names, emails = get_users('contacts.txt')
+    first_names, last_names, emails, birthdays = get_users('contacts.txt')
     message_template = parse_template('message.txt')
 
     smtp_server = smtplib.SMTP(host='smtp.gmail.com', port=587)
     smtp_server.starttls()
     smtp_server.login(FROM_EMAIL, MY_PASSWORD)
 
-    for name, email in zip(names, emails):
+    for first_name, last_name, email, birthday in zip(first_names, last_names, emails, birthdays):
         multipart_msg = MIMEMultipart()
 
-        message = message_template.substitute(USER_NAME=name.title())
+        message = message_template.substitute(USER_FIRST_NAME=first_name.title(),
+                                              USER_LAST_NAME=last_name.title(),
+                                              USER_BDAY=birthday)
 
         multipart_msg['From'] = FROM_EMAIL
         multipart_msg['To'] = email
