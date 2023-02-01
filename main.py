@@ -2,6 +2,10 @@ import smtplib
 from string import Template
 
 
+FROM_EMAIL = 'good.test.man@gmail.com'
+MY_PASSWORD = 'pejgekmfantjrsle'
+
+
 def get_users(file_name):
     names = []
     emails = []
@@ -22,7 +26,7 @@ def main():
     names, emails = get_users('contacts.txt')
     message_template = parse_template('message.txt')
 
-    smtp_server = smtplib.SMTP(host='host_address', port=port_here)
+    smtp_server = smtplib.SMTP(host='smtp.gmail.com', port=587)
     smtp_server.starttls()
     smtp_server.login(FROM_EMAIL, MY_PASSWORD)
 
