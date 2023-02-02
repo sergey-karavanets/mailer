@@ -4,8 +4,11 @@ from email.mime.text import MIMEText
 from string import Template
 
 
-FROM_EMAIL = 'good.test.man@gmail.com'
-MY_PASSWORD = 'pejgekmfantjrsle'
+FROM_EMAIL = 'linnea5@ethereal.email'
+MY_PASSWORD = '5WFKbaS2JWGxMKpUtX'
+
+email_host = 'smtp.ethereal.email'
+email_port = 587
 
 
 def get_users(file_name):
