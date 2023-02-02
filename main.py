@@ -50,7 +50,7 @@ def main():
         multipart_msg['To'] = email
         multipart_msg['Subject'] = 'Subject'
 
-        multipart_msg.attach(MIMEText(message, 'plain'))
+        multipart_msg.attach(MIMEText(message, 'html'))
 
         smtp_server.sendmail(multipart_msg['From'], multipart_msg['To'], multipart_msg.as_string())
         del multipart_msg
