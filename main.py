@@ -56,6 +56,7 @@ def main():
         del multipart_msg
 
     smtp_server.quit()
+    print('Letter(-s) sent successfully!')
 
 
 if __name__ == '__main__':
