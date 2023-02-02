@@ -32,7 +32,7 @@ def main():
     first_names, last_names, emails, birthdays = get_users('contacts.txt')
     message_template = parse_template('message.txt')
 
-    smtp_server = smtplib.SMTP(host='smtp.gmail.com', port=587)
+    smtp_server = smtplib.SMTP(host=email_host, port=email_port)
     smtp_server.starttls()
     smtp_server.login(FROM_EMAIL, MY_PASSWORD)
 
