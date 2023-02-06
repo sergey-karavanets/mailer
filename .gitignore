@@ -1,3 +1,5 @@
 /venv/
 /.idea/
 /docker/.docker-conf/
+/account.json
+/mail_sender/db.sqlite3
