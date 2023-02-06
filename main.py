@@ -54,9 +54,10 @@ def main():
 
         smtp_server.sendmail(multipart_msg['From'], multipart_msg['To'], multipart_msg.as_string())
         del multipart_msg
+        print('Letter to {email} successfully sent!'.format(email=email))
 
     smtp_server.quit()
-    print('Letter(-s) sent successfully!')
+    print('Email sending is over.')
 
 
 if __name__ == '__main__':
