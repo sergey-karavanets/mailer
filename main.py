@@ -4,8 +4,8 @@ from email.mime.text import MIMEText
 from string import Template
 
 
-FROM_EMAIL = 'linnea5@ethereal.email'
-MY_PASSWORD = '5WFKbaS2JWGxMKpUtX'
+FROM_EMAIL = 'francisco.witting@ethereal.email'
+MY_PASSWORD = '6nRsv6mbhfg3GW5PdS'
 
 email_host = 'smtp.ethereal.email'
 email_port = 587
