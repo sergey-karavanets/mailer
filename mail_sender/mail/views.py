@@ -18,6 +18,21 @@ def data_acquisition(request):
     user_info.close()
 
 
+def template_loading(request):
+    form = UploadFileForm(request.POST, request.FILES)
+    if form.is_valid():
+        return Template(handle_uploaded_file(request.FILES['file']))
+
+
+def handle_uploaded_file(template):
+    with open('mail_sender/mail/new_template.txt', 'w') as new_template:
+        for chunk in template.chunks():
+            new_template.write(chunk)
+    with open('mail_sender/mail/message.txt', 'r') as new_template:
+        message = new_template.read()
+    return message
+
+
 def send_emails(request):
     if request.method == "POST":
         with get_connection(
