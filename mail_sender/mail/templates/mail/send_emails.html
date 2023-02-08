@@ -19,12 +19,35 @@
         <label for="exampleInputSubject" class="form-label">Subject:</label>
         <input type="text" class="form-control" name="subject" id="exampleInputSubject"
                placeholder="Example: 50% off winter clothing sale" required>
-    </div >
+    </div>
     <div class="mb-3">
         <label for="exampleFormControlFile1">Select html template file to send</label>
         <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file" required>
     </div>
     <button type="submit" class="btn btn-primary">Send</button>
 </form>
+<p></p>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">Data</th>
+        <th scope="col">Template</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>First name</td>
+        <td>${USER_FIRST_NAME}</td>
+    </tr>
+    <tr>
+        <td>Last name</td>
+        <td>${USER_LAST_NAME}</td>
+    </tr>
+    <tr>
+        <td>Birthday</td>
+        <td>${USER_BDAY}</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
