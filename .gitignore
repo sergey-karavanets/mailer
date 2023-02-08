@@ -4,3 +4,4 @@
 /account.json
 /mail_sender/db.sqlite3
 /user_info.txt
+/mail_sender/mail/new_template.txt
