@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.core.mail import EmailMessage, get_connection
 from django.conf import settings
 from string import Template
+from .forms import UploadFileForm
 
 
 # Create your views here.
