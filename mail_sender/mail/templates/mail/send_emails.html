@@ -7,7 +7,7 @@
     <title>Title</title>
 </head>
 <body>
-<form method="post">
+<form enctype="multipart/form-data" method="post" action="">
     {% csrf_token %}
     <div class="mb-3">
         <label for="exampleFormControlTextarea" class="form-label">Recipient data, one per line (email, name, surname,
